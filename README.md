@@ -47,13 +47,13 @@ Install boto3 with:
 
 ## Lambda Function Logic
 
-### 1. EBS Snapshot Cleanup (`ebs_cleanup.py`)
+### 1. EBS Snapshot Cleanup (`Stale_EBS_delete.py`)
 
 **Step 1**: Retrieve all EBS snapshots owned by the account.  
 **Step 2**: Fetch IDs of all running EC2 instances and their attached volumes.  
 **Step 3**: Delete snapshots not linked to any active volume or EC2 instance.
 
-### 2. S3 Stale Object Cleanup (`s3_cleanup.py`)
+### 2. S3 Stale Object Cleanup (`Stale_s3_delete.py`)
 
 **Step 1**: List objects in a target bucket.  
 **Step 2**: Check the last modified date.  
@@ -61,7 +61,7 @@ Install boto3 with:
 
 ### 3. Test the Functions
 
-- Use the **AWS Lambda Console** to trigger test events for both Lambda functions (`ebs_cleanup.py` and `s3_cleanup.py`).
+- Use the **AWS Lambda Console** to trigger test events for both Lambda functions (`Stale_EBS_delete.py` and `Stale_s3_delete.py`).
 - Check the **CloudWatch Logs** to verify the resources that were deleted and confirm the function executed successfully.
 
 ### Notes
